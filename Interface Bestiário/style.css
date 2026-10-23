@@ -1,0 +1,650 @@
+/* ==========================================================
+   BESTARALHO - Catálogo de Monstros
+   Cores com contraste mínimo de 4,5:1 sobre o fundo escuro
+   ========================================================== */
+
+:root {
+    --bg: #0d0d0d;
+    --superficie: #151a21;
+    --superficie-2: #1d242d;
+    --borda: #2c3541;
+    --texto: #f1f3f5;
+    --texto-suave: #c9ced4;
+    --destaque: #ff5252;      /* vermelho legível sobre fundo escuro (~6:1) */
+    --destaque-forte: #b30000; /* usado como fundo de botão com texto branco */
+    --altura-cabecalho: 72px;
+    --raio: 14px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg);
+    color: var(--texto);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+}
+
+/* ---------- Acessibilidade ---------- */
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+.pular-conteudo {
+    position: fixed;
+    top: -60px;
+    left: 16px;
+    z-index: 100;
+    background: #fff;
+    color: #000;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: top 0.2s;
+}
+
+.pular-conteudo:focus {
+    top: 12px;
+}
+
+:focus-visible {
+    outline: 3px solid #ffd54a;
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+/* ---------- Cabeçalho ---------- */
+
+.cabecalho {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 50;
+    height: var(--altura-cabecalho);
+    background-color: rgba(13, 13, 13, 0.75);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--borda);
+}
+
+.cabecalho-interno {
+    max-width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.logo span {
+    color: var(--destaque);
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    gap: 8px;
+}
+
+.menu a {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.menu a:hover {
+    background-color: var(--superficie-2);
+}
+
+.menu a[aria-current="page"] {
+    background-color: var(--destaque-forte);
+}
+
+.btn-menu {
+    display: none;
+    background: transparent;
+    color: var(--texto);
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+    min-width: 48px;
+    min-height: 48px;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+/* ---------- Botões ---------- */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 48px;
+    padding: 12px 28px;
+    border-radius: 999px;
+    border: 2px solid #fff;
+    background: transparent;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.25s, color 0.25s, transform 0.25s;
+}
+
+.btn:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.btn:active {
+    transform: scale(0.97);
+}
+
+.btn-principal {
+    background-color: var(--destaque-forte);
+    border-color: var(--destaque-forte);
+}
+
+.btn-principal:hover {
+    background-color: #fff;
+    border-color: #fff;
+}
+
+/* ---------- Página inicial: hero ---------- */
+
+.hero {
+    position: relative;
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: calc(var(--altura-cabecalho) + 24px) 20px 100px;
+    background-image:
+        radial-gradient(circle at 50% 45%, rgba(120, 0, 0, 0.25), transparent 60%),
+        linear-gradient(rgba(0, 0, 0, 0.72), rgba(13, 13, 13, 1)),
+        url('./fotos/Wallpaper_inicio.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-conteudo {
+    max-width: 820px;
+}
+
+.hero h1 {
+    font-size: clamp(2.2rem, 7vw, 4.5rem);
+    line-height: 1.1;
+    text-transform: uppercase;
+}
+
+.hero .subtitulo {
+    margin-top: 12px;
+    font-size: clamp(1.2rem, 3.5vw, 2rem);
+    font-weight: 800;
+    color: var(--destaque);
+}
+
+.hero .descricao {
+    margin: 22px auto 34px;
+    max-width: 620px;
+    font-size: 1.1rem;
+    color: var(--texto-suave);
+}
+
+.hero-acoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    justify-content: center;
+}
+
+.indicador-rolagem {
+    position: absolute;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.85rem;
+    color: var(--texto-suave);
+    text-decoration: none;
+}
+
+.indicador-rolagem .seta {
+    font-size: 1.5rem;
+    animation: quicar 1.6s infinite;
+}
+
+@keyframes quicar {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(8px); }
+}
+
+/* ---------- Seções ---------- */
+
+.secao {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 20px;
+}
+
+.secao h2 {
+    text-align: center;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    color: var(--destaque);
+    margin-bottom: 12px;
+}
+
+.secao .intro {
+    text-align: center;
+    color: var(--texto-suave);
+    max-width: 600px;
+    margin: 0 auto 44px;
+}
+
+.passos {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.passos li {
+    background: var(--superficie);
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+    padding: 28px 24px;
+}
+
+.passos .numero {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--destaque-forte);
+    font-weight: bold;
+    margin-bottom: 14px;
+}
+
+.passos h3 {
+    margin-bottom: 6px;
+    font-size: 1.15rem;
+}
+
+.passos p {
+    color: var(--texto-suave);
+    font-size: 0.95rem;
+}
+
+.mini-lista {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 16px;
+}
+
+.mini-card {
+    display: block;
+    text-decoration: none;
+    background: var(--superficie);
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+    overflow: hidden;
+    transition: transform 0.25s, border-color 0.25s;
+}
+
+.mini-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--destaque);
+}
+
+.mini-card img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    background: var(--superficie-2);
+}
+
+.mini-card span {
+    display: block;
+    padding: 12px;
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.chamada-final {
+    text-align: center;
+    margin-top: 44px;
+}
+
+/* ---------- Página de monstros ---------- */
+
+.pagina-topo {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: calc(var(--altura-cabecalho) + 48px) 20px 24px;
+    text-align: center;
+}
+
+.pagina-topo h1 {
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    text-transform: uppercase;
+}
+
+.pagina-topo p {
+    margin: 10px auto 0;
+    max-width: 620px;
+    color: var(--texto-suave);
+}
+
+.ferramentas {
+    position: sticky;
+    top: var(--altura-cabecalho);
+    z-index: 30;
+    background: rgba(13, 13, 13, 0.92);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--borda);
+    padding: 14px 20px;
+}
+
+.ferramentas-interno {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px 24px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.busca label {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--texto-suave);
+    margin-bottom: 4px;
+}
+
+.busca input {
+    width: min(100%, 340px);
+    min-height: 46px;
+    padding: 10px 16px;
+    border-radius: 999px;
+    border: 1px solid var(--borda);
+    background: var(--superficie);
+    color: var(--texto);
+    font-size: 1rem;
+}
+
+.busca input::placeholder {
+    color: #9aa3ad;
+}
+
+.atalhos {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.atalhos a {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 999px;
+    border: 1px solid var(--borda);
+    background: var(--superficie);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.atalhos a:hover {
+    border-color: var(--destaque);
+}
+
+.atalhos a.ativo {
+    background: var(--destaque-forte);
+    border-color: var(--destaque-forte);
+}
+
+.status-busca {
+    max-width: 1200px;
+    margin: 18px auto 0;
+    padding: 0 20px;
+    color: var(--texto-suave);
+    font-size: 0.95rem;
+}
+
+.container-monstros {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px 20px 80px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 36px 28px;
+}
+
+.card-monstro {
+    display: flex;
+    flex-direction: column;
+    background: var(--superficie);
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+    overflow: hidden;
+    scroll-margin-top: calc(var(--altura-cabecalho) + 90px);
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.card-monstro:hover,
+.card-monstro:focus-within {
+    transform: translateY(-5px);
+    border-color: var(--destaque);
+    box-shadow: 0 12px 30px rgba(179, 0, 0, 0.25);
+}
+
+.card-monstro img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    background: var(--superficie-2);
+}
+
+.card-monstro .card-textos {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 20px 22px 24px;
+}
+
+.categoria {
+    color: var(--destaque);
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.card-monstro h2 {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    line-height: 1.2;
+    margin: 6px 0 12px;
+}
+
+.card-monstro p {
+    color: var(--texto-suave);
+    font-size: 0.97rem;
+    line-height: 1.6;
+    margin-bottom: 22px;
+}
+
+/* o botão sempre fica alinhado na base, sem altura fixa nos textos */
+.card-monstro .btn {
+    margin-top: auto;
+}
+
+.sem-resultados {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px 80px;
+    text-align: center;
+    color: var(--texto-suave);
+}
+
+[hidden] {
+    display: none !important;
+}
+
+/* ---------- Voltar ao topo ---------- */
+
+.voltar-topo {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 60;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    background: var(--destaque-forte);
+    color: #fff;
+    font-size: 1.3rem;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+
+.voltar-topo.visivel {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* ---------- Rodapé ---------- */
+
+.rodape {
+    background-color: #111;
+    border-top: 1px solid var(--borda);
+    text-align: center;
+    padding: 24px 20px;
+    font-size: 0.9rem;
+    color: var(--texto-suave);
+}
+
+.rodape p + p {
+    margin-top: 4px;
+}
+
+/* ---------- Responsividade ---------- */
+
+@media (max-width: 760px) {
+    .btn-menu {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .menu {
+        position: absolute;
+        top: var(--altura-cabecalho);
+        left: 0;
+        right: 0;
+        background: rgba(13, 13, 13, 0.97);
+        border-bottom: 1px solid var(--borda);
+        display: none;
+        padding: 12px 20px 20px;
+    }
+
+    .menu.aberto {
+        display: block;
+    }
+
+    .menu ul {
+        flex-direction: column;
+    }
+
+    .menu a {
+        display: block;
+        padding: 14px 18px;
+    }
+
+    .ferramentas {
+        position: static;
+    }
+
+    .atalhos {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 6px;
+        width: 100%;
+    }
+
+    .atalhos a {
+        white-space: nowrap;
+    }
+
+    .card-monstro {
+        scroll-margin-top: calc(var(--altura-cabecalho) + 16px);
+    }
+}
+
+/* ---------- Respeita quem prefere menos movimento ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}

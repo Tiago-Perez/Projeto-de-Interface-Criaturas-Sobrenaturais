@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bestaralho | Catálogo de Monstros</title>
+    <meta name="description" content="Bestaralho: um catálogo de criaturas sombrias com resumo de cada monstro e busca por nome.">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+
+    <header class="cabecalho">
+        <div class="cabecalho-interno">
+            <a class="logo" href="index.html" aria-label="Bestaralho, página inicial">Besta<span>ralho</span></a>
+
+            <button class="btn-menu" id="btn-menu" aria-controls="menu" aria-expanded="false" aria-label="Abrir menu">☰</button>
+
+            <nav class="menu" id="menu" aria-label="Principal">
+                <ul>
+                    <li><a href="index.html" aria-current="page">Início</a></li>
+                    <li><a href="monstros.html">Monstros</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="conteudo">
+        <section class="hero" aria-labelledby="titulo-hero">
+            <div class="hero-conteudo">
+                <h1 id="titulo-hero">Bem-vindo ao Bestaralho</h1>
+                <p class="subtitulo">Alerta de fofura!</p>
+                <p class="descricao">
+                    Um catálogo com seis tipos de monstros. Leia um resumo de cada um,
+                    busque pelo nome e, se quiser saber mais, siga para a Wikipédia.
+                </p>
+                <div class="hero-acoes">
+                    <a class="btn btn-principal" href="monstros.html">Explorar o catálogo →</a>
+                    <a class="btn" href="#como-funciona">Como funciona</a>
+                </div>
+            </div>
+
+            <a class="indicador-rolagem" href="#como-funciona">
+                <span>Role para ver mais</span>
+                <span class="seta" aria-hidden="true">↓</span>
+            </a>
+        </section>
+
+        <section class="secao" id="como-funciona" aria-labelledby="titulo-como">
+            <h2 id="titulo-como">Como funciona</h2>
+            <p class="intro">Três passos simples para conhecer as criaturas.</p>
+
+            <ol class="passos">
+                <li>
+                    <span class="numero" aria-hidden="true">1</span>
+                    <h3>Explore</h3>
+                    <p>Abra o catálogo e veja todas as criaturas organizadas em cards, com imagem e descrição.</p>
+                </li>
+                <li>
+                    <span class="numero" aria-hidden="true">2</span>
+                    <h3>Busque</h3>
+                    <p>Use o campo de busca ou os atalhos no topo para ir direto ao monstro que você procura.</p>
+                </li>
+                <li>
+                    <span class="numero" aria-hidden="true">3</span>
+                    <h3>Aprofunde</h3>
+                    <p>Clique em "Ler na Wikipédia" para abrir um artigo completo em uma nova aba.</p>
+                </li>
+            </ol>
+        </section>
+
+        <section class="secao" aria-labelledby="titulo-criaturas">
+            <h2 id="titulo-criaturas">Conheça as criaturas</h2>
+            <p class="intro">Escolha uma e vá direto para o card dela.</p>
+
+            <ul class="mini-lista">
+                <li><a class="mini-card" href="monstros.html#alien"><img src="./fotos/Alien.jpg" alt="" loading="lazy"><span>Alien</span></a></li>
+                <li><a class="mini-card" href="monstros.html#vampiro"><img src="./fotos/Vampiro.png" alt="" loading="lazy"><span>Vampiro</span></a></li>
+                <li><a class="mini-card" href="monstros.html#fantasma"><img src="./fotos/Fantasma.jpg" alt="" loading="lazy"><span>Fantasma</span></a></li>
+                <li><a class="mini-card" href="monstros.html#quimera"><img src="./fotos/Quimera.jpg" alt="" loading="lazy"><span>Quimera</span></a></li>
+                <li><a class="mini-card" href="monstros.html#demonio"><img src="./fotos/Demonio.png" alt="" loading="lazy"><span>Demônio</span></a></li>
+                <li><a class="mini-card" href="monstros.html#zumbi"><img src="./fotos/Zumbi.jpg" alt="" loading="lazy"><span>Zumbi</span></a></li>
+            </ul>
+
+            <div class="chamada-final">
+                <a class="btn btn-principal" href="monstros.html">Ver o catálogo completo →</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <p>2026 Bestaralho · Catálogo de Monstros · Trabalho de IHC</p>
+        <p>Desenvolvido por Gustavo e Tiago</p>
+    </footer>
+
+    <button class="voltar-topo" id="voltar-topo" aria-label="Voltar ao topo">↑</button>
+</body>
+</html>

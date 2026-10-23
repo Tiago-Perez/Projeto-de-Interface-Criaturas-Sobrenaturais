@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monstros | Bestaralho</title>
+    <meta name="description" content="Catálogo com seis tipos de monstros: alien, vampiro, fantasma, quimera, demônio e zumbi.">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+
+    <header class="cabecalho">
+        <div class="cabecalho-interno">
+            <a class="logo" href="index.html" aria-label="Bestaralho, página inicial">Besta<span>ralho</span></a>
+
+            <button class="btn-menu" id="btn-menu" aria-controls="menu" aria-expanded="false" aria-label="Abrir menu">☰</button>
+
+            <nav class="menu" id="menu" aria-label="Principal">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="monstros.html" aria-current="page">Monstros</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="conteudo">
+        <div class="pagina-topo">
+            <h1>Entidades registradas</h1>
+            <p>Seis tipos de criaturas. Busque pelo nome, pule direto para uma delas ou role a página.</p>
+        </div>
+
+        <div class="ferramentas">
+            <div class="ferramentas-interno">
+                <div class="busca" role="search">
+                    <label for="busca">Buscar criatura</label>
+                    <input type="search" id="busca" placeholder="Ex.: vampiro, sangue, cemitério..." autocomplete="off">
+                    <button type="button" id="limpar-busca" class="sr-only">Limpar busca</button>
+                </div>
+
+                <nav aria-label="Ir direto para uma criatura">
+                    <ul class="atalhos">
+                        <li><a href="#alien">Alien</a></li>
+                        <li><a href="#vampiro">Vampiro</a></li>
+                        <li><a href="#fantasma">Fantasma</a></li>
+                        <li><a href="#quimera">Quimera</a></li>
+                        <li><a href="#demonio">Demônio</a></li>
+                        <li><a href="#zumbi">Zumbi</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <p class="status-busca" id="status-busca" role="status" aria-live="polite"></p>
+
+        <div class="container-monstros">
+
+            <article class="card-monstro" id="alien" data-busca="Alien Extraterrestre Mal cósmico abdução">
+                <img src="./fotos/Alien.jpg" alt="Criatura esguia de pele azulada e olhos brancos entrando por uma porta em um corredor escuro" loading="lazy">
+                <div class="card-textos">
+                    <span class="categoria">Criaturas extraterrestres</span>
+                    <h2>Mal cósmico</h2>
+                    <p>Criaturas esguias de pele cinza-azulada, cabeça alongada e olhos brancos sem pupila. Emitem um zumbido agudo que faz os cachorros uivarem e deixam no ar um cheiro de ozônio e cobre queimado. Vindas de além do cosmos com propósitos obscuros, veem a humanidade como espécime de laboratório. Estão atreladas a abduções silenciosas, experimentos cruéis e à manipulação da mente humana, movidas por uma curiosidade fria e sem piedade, deixando um rastro de apagões e paranoia.</p>
+                    <a class="btn" href="https://pt.wikipedia.org/wiki/Extraterrestre" target="_blank" rel="noopener noreferrer">
+                        Ler na Wikipédia <span aria-hidden="true">↗</span><span class="sr-only">sobre Extraterrestre (abre em nova aba)</span>
+                    </a>
+                </div>
+            </article>
+
+            <article class="card-monstro" id="vampiro" data-busca="Vampiro Predadores noturnos sangue imortal">
+                <img src="./fotos/Vampiro.png" alt="Ilustração de um vampiro pálido de capa preta e bengala sob um céu de tempestade" loading="lazy">
+                <div class="card-textos">
+                    <span class="categoria">Criaturas vampíricas</span>
+                    <h2>Predadores noturnos</h2>
+                    <p>Criaturas imortais das sombras, altas e pálidas, de olhos amarelos que brilham no escuro. Abominam a luz solar e usam um charme insidioso para seduzir e hipnotizar presas fáceis antes de se alimentar de seu sangue. Seu mal é parasitário e manipulador, nascido da luxúria e da gula: drenam a vida aos poucos e condenam as vítimas a se tornarem iguais a elas.</p>
+                    <a class="btn" href="https://pt.wikipedia.org/wiki/Vampiro" target="_blank" rel="noopener noreferrer">
+                        Ler na Wikipédia <span aria-hidden="true">↗</span><span class="sr-only">sobre Vampiro (abre em nova aba)</span>
+                    </a>
+                </div>
+            </article>
+
+            <article class="card-monstro" id="fantasma" data-busca="Fantasma Assombrações etéreas alma espírito">
+                <img src="./fotos/Fantasma.jpg" alt="Vulto translúcido em um corredor de casa antiga, em preto e branco" loading="lazy">
+                <div class="card-textos">
+                    <span class="categoria">Criaturas fantasmagóricas</span>
+                    <h2>Assombrações etéreas</h2>
+                    <p>Ecos translúcidos de almas aprisionadas no plano físico, de rosto sem feições e existência lúgubre. Manifestam-se derrubando a temperatura do ambiente e interagindo com objetos. Presas a tragédias mal resolvidas, rancores e vinganças, alimentam-se do pavor dos vivos e transformam lares seguros em cenários de loucura, sem nunca encontrar descanso.</p>
+                    <a class="btn" href="https://pt.wikipedia.org/wiki/Fantasma" target="_blank" rel="noopener noreferrer">
+                        Ler na Wikipédia <span aria-hidden="true">↗</span><span class="sr-only">sobre Fantasma (abre em nova aba)</span>
+                    </a>
+                </div>
+            </article>
+
+            <article class="card-monstro" id="quimera" data-busca="Quimera Bestas mitológicas experimento híbrido">
+                <img src="./fotos/Quimera.jpg" alt="Criatura de tinta preta e branca, agachada, com chifres e dentes à mostra" loading="lazy">
+                <div class="card-textos">
+                    <span class="categoria">Criaturas quiméricas</span>
+                    <h2>Bestas mitológicas</h2>
+                    <p>Abominações espúrias forjadas pela fusão antinatural de partes de diferentes seres, humanos e animais. Rugem com vozes que misturam várias espécies e caçam movidas por instintos selvagens e caóticos. Fruto de experimentos profanos, maldições ou pactos antigos, representam a mais pura violação das leis da natureza e destroem violentamente ecossistemas inteiros.</p>
+                    <a class="btn" href="https://pt.wikipedia.org/wiki/Quimera_(mitologia)" target="_blank" rel="noopener noreferrer">
+                        Ler na Wikipédia <span aria-hidden="true">↗</span><span class="sr-only">sobre Quimera (abre em nova aba)</span>
+                    </a>
+                </div>
+            </article>
+
+            <article class="card-monstro" id="demonio" data-busca="Demônio Entidades infernais inferno enxofre alma">
+                <img src="./fotos/Demonio.png" alt="Ilustração antiga de uma criatura demoníaca com cabeça de bode e asas, sentada em um trono" loading="lazy">
+                <div class="card-textos">
+                    <span class="categoria">Criaturas demoníacas</span>
+                    <h2>Entidades infernais</h2>
+                    <p>Criaturas de chifres retorcidos e cascos fendidos, forjadas diretamente nas profundezas do submundo, que deixam no ar um cheiro de enxofre e fumaça. Seres de pura malícia, estão atreladas à corrupção moral e à ruína, fechando pactos capciosos baseados nas fraquezas humanas. Seu dever é corromper, atormentar os vivos e devorar almas.</p>
+                    <a class="btn" href="https://pt.wikipedia.org/wiki/Dem%C3%B4nio" target="_blank" rel="noopener noreferrer">
+                        Ler na Wikipédia <span aria-hidden="true">↗</span><span class="sr-only">sobre Demônio (abre em nova aba)</span>
+                    </a>
+                </div>
+            </article>
+
+            <article class="card-monstro" id="zumbi" data-busca="Zumbi Mortos esfomeados cemitério praga">
+                <img src="./fotos/Zumbi.jpg" alt="Grupo de zumbis em um cemitério sob a lua cheia" loading="lazy">
+                <div class="card-textos">
+                    <span class="categoria">Criaturas zumbis</span>
+                    <h2>Mortos e esfomeados</h2>
+                    <p>Criaturas de pele rachada como barro seco e olhos sem brilho, que exalam cheiro de terra úmida e carne velha. Cadáveres reanimados por magia negra, pragas ou vontade maligna, movem-se sem razão ou consciência, guiados por uma fome inexorável de carne viva. Seu mal é o do contágio absoluto e da morte em massa: agem como uma praga implacável que consome a civilização sem piedade.</p>
+                    <a class="btn" href="https://pt.wikipedia.org/wiki/Zumbi" target="_blank" rel="noopener noreferrer">
+                        Ler na Wikipédia <span aria-hidden="true">↗</span><span class="sr-only">sobre Zumbi (abre em nova aba)</span>
+                    </a>
+                </div>
+            </article>
+
+        </div>
+
+        <div class="sem-resultados" id="sem-resultados" hidden>
+            <p>Nenhuma criatura encontrada com esse termo. Tente outro nome ou apague a busca.</p>
+        </div>
+    </main>
+
+    <footer class="rodape">
+        <p>2026 Bestaralho · Catálogo de Monstros · Trabalho de IHC</p>
+        <p>Desenvolvido por Gustavo e Tiago</p>
+    </footer>
+
+    <button class="voltar-topo" id="voltar-topo" aria-label="Voltar ao topo">↑</button>
+</body>
+</html>
